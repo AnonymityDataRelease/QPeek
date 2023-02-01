@@ -23,6 +23,7 @@ Our  codes are based on the following packages:
 	pip install nltk
 
 We employ [Sentence Transformer](https://www.sbert.net/#) to conduct anchor sentence detection and expansion. The embeddings of sentences and queries are encoded by [Bi-Encoder](https://www.sbert.net/examples/applications/retrieve_rerank/README.html). We employ the pretrained sentence embedding model ([link](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)), It maps sentences & paragraphs to a 768 dimensional dense vector space and can be used for tasks like clustering or semantic search. For more details, please find [here](https://www.sbert.net/docs/pretrained_models.html#sentence-embedding-models). 
+For the passage-level ranker, we employ the [Cross-Encoder](https://www.sbert.net/examples/applications/cross-encoder/README.html) pre-trained on MSMARCO passage re-ranking task.
 
 The code for pre-computing the sentence embeddings:
 	
@@ -37,3 +38,5 @@ For the first stage run files, we use the official files for TREC-DL collection.
 The used qrels and our results of document ranking are available in the Data folder.
 
 For evaluation, we use [ir measures](https://pypi.org/project/ir-measures/) to compute nDCG@10, 20, and MAP. 
+
+For human evaluation, the used data is from the training dataset from the MSMARCO document re-ranking task. The used queries are available on Data folder.
